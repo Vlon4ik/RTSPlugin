@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "rpsplugin",
+  "version": "${version}",
+  "name": "RPSPlugin",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/rpsplugin/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.vlon4ik.rpsplugin.client.RpspluginDataGenerator"
+    ],
+    "main": [
+      "org.vlon4ik.rpsplugin.Rpsplugin"
+    ]
+  },
+  "mixins": [
+    "rpsplugin.mixins.json",
+    {
+      "config": "rpsplugin.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
